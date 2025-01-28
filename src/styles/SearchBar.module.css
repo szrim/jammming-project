@@ -1,0 +1,27 @@
+.searchDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10%;
+}
+
+.input{
+  height: 30px;
+  margin: 0 20px;
+  width: 350px;
+  align-self: center;
+  text-align: center;
+}
+
+.btn{
+  background-color: blueviolet;
+  opacity: 0.85;
+  width: 200px;
+  height: 25px;
+  align-self: center;
+  margin-top: 17px;
+}
+
+.btn:hover{
+  opacity: 1;
+}

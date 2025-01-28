@@ -1,0 +1,13 @@
+.playlistDiv{
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  flex-direction: column;
+  background-color: blueviolet;
+  width: 35%;
+  min-height: 400px;
+  padding: 5px 15px;
+  margin: 20px;
+  opacity: 0.9;
+  border: 1px solid black;
+}
