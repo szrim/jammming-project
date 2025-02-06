@@ -4,49 +4,18 @@ import styles from '../styles/App.module.css';
 import SearchBar from './SearchBar';
 import Playlist from './Playlist';
 import SearchResults from './SearchResults';
+import Spotify from '../util/spotify';
 
 function App() {
 
-  const [playlistName, setPlaylistName] = useState('Default Playlist Name');
-  const [playlistTracks, setPlaylistTracks] = useState([{
-    name: 'example1',
-    artist: 'exampleArtist1',
-    album: 'rando',
-    id: 1
-  },
-  {
-    name: 'example2',
-    artist: 'exampleArtist2',
-    album: 'rando',
-    id: 2
-  }, 
-  {
-    name: 'example3',
-    artist: 'exampleArtist3',
-    album: 'rando',
-    id: 3
-  }]);
-
-  const [searchResults, setSearchResults] = useState([{
-    name: 'count on me',
-    artist: 'Bruno Mars',
-    album: 'Doo-woops and wooligans',
-    id: 5
-  },
-  {
-    name: 'hello',
-    artist: 'Adele',
-    album: 'value',
-    id: 6
-  },
-  {
-    name: 'break my bones',
-    artist: 'Matt Hansen',
-    album: 'any',
-    id: 7
-  }]);
+  const [playlistName, setPlaylistName] = useState('Playlist Name');
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   function search(term){
+    Spotify.search(term)
+    .then((result) => setSearchResults(result))
+    console.log(searchResults)
     console.log(`Searching ${term}`)
   }
 
@@ -74,6 +43,11 @@ function App() {
 
   const savePlaylist = () => {
     const trackURIS = playlistTracks.map((t) => t.uri)
+    Spotify.savePlaylist(playlistName, trackURIS)
+    .then(() => {
+      setPlaylistName("New Playlist")
+      setPlaylistTracks([]);
+    })
   }
 
   return (

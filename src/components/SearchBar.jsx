@@ -15,7 +15,7 @@ function SearchBar(props){
 
   return(
     <div className={styles.searchDiv}>
-      <input className={styles.input} onChange={handleInputChange} placeholder="Search by song or artist..." type="text" value={inputVal}/>
+      <input className={styles.input} onChange={handleInputChange} placeholder="Search by song or artist..." type="text" value={term}/>
       <button className={styles.btn} onClick={passTerm}>Search</button>
     </div>
   )

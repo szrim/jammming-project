@@ -9,4 +9,5 @@
   align-content: space-around;
   padding: 5px;
   margin: 15px;
+  overflow-y: scroll;
 }
