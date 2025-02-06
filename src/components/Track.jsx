@@ -21,8 +21,8 @@ function Track(props){
 
   return(
     <div className={styles.trackDiv}>
-      <h3>{props.track.name}</h3>
-      <p>{`${props.track.artist} | ${props.track.album}`}</p>
+      <h3>{`${props.track.name}  |`}</h3>
+      <p>{props.track.artist}</p>
       {renderAction()}
     </div>
   )

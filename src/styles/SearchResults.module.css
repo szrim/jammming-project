@@ -1,13 +1,13 @@
 .searchResults{
   display: flex;
-  height: 400px;
+  flex-direction: column;
+  height: 500px;
   width:45%;
   background-color: blueviolet;
   opacity: 0.9;
   border: 1px solid black;
-  justify-content: center;
   align-content: space-around;
   padding: 5px;
   margin: 15px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
