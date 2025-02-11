@@ -40,7 +40,6 @@ const Spotify = {
       if(!jsonRes){
         console.error('Response error')
       }
-      console.log(accessToken)
 
       return jsonRes.tracks.items.map(t => ({
         id: t.id,
